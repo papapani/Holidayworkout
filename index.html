@@ -54,8 +54,7 @@ button{
   padding:42px 0 70px;
 }
 
-
-/* ---------------- HERO ---------------- */
+/* HERO */
 
 .hero{
   padding:12px 2px 38px;
@@ -87,8 +86,7 @@ h1{
   line-height:1.6;
 }
 
-
-/* ---------------- GENERAL ---------------- */
+/* GENERAL */
 
 .section{
   margin-top:18px;
@@ -123,8 +121,7 @@ h2{
   line-height:1.5;
 }
 
-
-/* ---------------- WARMUP ---------------- */
+/* WARMUP */
 
 .warmup-card{
   padding:24px;
@@ -162,8 +159,7 @@ h2{
   text-align:right;
 }
 
-
-/* ---------------- TABS ---------------- */
+/* TABS */
 
 .workout-section{
   margin-top:28px;
@@ -207,8 +203,7 @@ h2{
   color:#fff;
 }
 
-
-/* ---------------- DAY CARD ---------------- */
+/* DAY CARD */
 
 .day{
   display:none;
@@ -275,8 +270,7 @@ h2{
   font-size:12px;
 }
 
-
-/* ---------------- WORKOUT TABLE ---------------- */
+/* WORKOUT TABLE */
 
 .workout{
   margin-top:25px;
@@ -314,8 +308,7 @@ h2{
   text-align:right;
 }
 
-
-/* ---------------- PERSON CARDS ---------------- */
+/* PERSON CARDS */
 
 .scaling{
   display:grid;
@@ -331,11 +324,11 @@ h2{
   background:var(--surface-soft);
 }
 
-.person.max{
+.person.dani{
   border-top:3px solid var(--accent);
 }
 
-.person.dani{
+.person.max{
   border-top:3px solid var(--warm);
 }
 
@@ -345,11 +338,11 @@ h2{
   margin-bottom:7px;
 }
 
-.person.max .person-name{
+.person.dani .person-name{
   color:var(--accent);
 }
 
-.person.dani .person-name{
+.person.max .person-name{
   color:var(--warm);
 }
 
@@ -360,8 +353,7 @@ h2{
   line-height:1.55;
 }
 
-
-/* ---------------- COACHING ---------------- */
+/* COACHING */
 
 .coach-note{
   margin-top:18px;
@@ -377,8 +369,7 @@ h2{
   color:var(--accent);
 }
 
-
-/* ---------------- LEGEND ---------------- */
+/* LEGEND */
 
 .info-card{
   padding:24px;
@@ -411,8 +402,7 @@ h2{
   line-height:1.5;
 }
 
-
-/* ---------------- WARNING ---------------- */
+/* WARNING */
 
 .warning{
   margin-top:16px;
@@ -436,8 +426,7 @@ h2{
   line-height:1.55;
 }
 
-
-/* ---------------- FOOTER ---------------- */
+/* FOOTER */
 
 footer{
   padding:30px 2px 0;
@@ -445,8 +434,7 @@ footer{
   font-size:12px;
 }
 
-
-/* ---------------- MOBILE ---------------- */
+/* MOBILE */
 
 @media(max-width:620px){
 
@@ -512,8 +500,8 @@ footer{
     </h1>
 
     <p>
-      Sechs Tage Bodyweight. Rund 20 Minuten für Max.
-      Dani kann bei Bedarf Volumen oder Dauer erhöhen.
+      Sechs Tage Bodyweight. Rund 20 Minuten als Basis für Dani.
+      Max kann bei Bedarf Schwierigkeit, Volumen oder Dauer erhöhen.
       Kurz genug für Familienurlaub, strukturiert genug für echten Trainingsreiz.
     </p>
   </header>
@@ -631,18 +619,20 @@ footer{
 
         <div class="scaling">
 
-          <div class="person max">
-            <div class="person-name">Max</div>
-            <p>
-              Push-ups erhöht an Bank, Tischkante oder stabiler Mauer.
-              Höhe so wählen, dass 10 saubere Wiederholungen möglich sind.
-            </p>
-          </div>
-
           <div class="person dani">
             <div class="person-name">Dani</div>
             <p>
-              Normale Push-ups. Bei Bedarf auf 20–25 Minuten verlängern.
+              Push-ups erhöht an Bank, Tischkante oder stabiler Mauer.
+              Höhe so wählen, dass 10 saubere Wiederholungen möglich sind.
+              15–20 Minuten reichen.
+            </p>
+          </div>
+
+          <div class="person max">
+            <div class="person-name">Max</div>
+            <p>
+              Normale Push-ups. Auf 20–25 Minuten verlängern oder das Tempo
+              leicht erhöhen, ohne die Technik zu verlieren.
             </p>
           </div>
 
@@ -704,18 +694,19 @@ footer{
 
         <div class="scaling">
 
-          <div class="person max">
-            <div class="person-name">Max</div>
-            <p>
-              Push-up-Höhe so wählen, dass die 10 Wiederholungen spätestens
-              nach etwa 30–40 Sekunden erledigt sind.
-            </p>
-          </div>
-
           <div class="person dani">
             <div class="person-name">Dani</div>
             <p>
-              20 Air Squats, normale Push-ups und bei Bedarf 16 Lunges.
+              Push-up-Höhe so wählen, dass die 10 Wiederholungen innerhalb
+              von etwa 30–40 Sekunden sauber erledigt sind.
+            </p>
+          </div>
+
+          <div class="person max">
+            <div class="person-name">Max</div>
+            <p>
+              20 Air Squats, 10 normale Push-ups, 16 Lunges gesamt
+              und bis zu 40 Sekunden Mountain Climbers.
             </p>
           </div>
 
@@ -777,19 +768,19 @@ footer{
 
         <div class="scaling">
 
-          <div class="person max">
-            <div class="person-name">Max</div>
+          <div class="person dani">
+            <div class="person-name">Dani</div>
             <p>
               Erhöhte Push-ups und Squat Thrusts ohne Liegestütz.
               Zeitlimit: 20 Minuten.
             </p>
           </div>
 
-          <div class="person dani">
-            <div class="person-name">Dani</div>
+          <div class="person max">
+            <div class="person-name">Max</div>
             <p>
               Normale Push-ups und vollständige Burpees.
-              Ebenfalls fünf Runden.
+              Fünf Runden. Wer früher fertig ist, hat fertig.
             </p>
           </div>
 
@@ -851,18 +842,19 @@ footer{
 
         <div class="scaling">
 
-          <div class="person max">
-            <div class="person-name">Max</div>
-            <p>
-              Ruhiges Tempo. Push-ups früh genug skalieren.
-            </p>
-          </div>
-
           <div class="person dani">
             <div class="person-name">Dani</div>
             <p>
-              Push-ups schwerer skalieren oder auf 20 Minuten verlängern.
-              Trotzdem kein Vollgas.
+              Ruhiges Tempo. Push-ups früh genug skalieren.
+              Heute bewusst nicht jagen.
+            </p>
+          </div>
+
+          <div class="person max">
+            <div class="person-name">Max</div>
+            <p>
+              Push-ups schwieriger skalieren oder auf 20 Minuten verlängern.
+              Trotzdem kein Vollgas-Tag.
             </p>
           </div>
 
@@ -924,18 +916,19 @@ footer{
 
         <div class="scaling">
 
-          <div class="person max">
-            <div class="person-name">Max</div>
-            <p>
-              Erhöhte Push-ups. Sobald die Wiederholungen unsauber werden,
-              Auflage erhöhen.
-            </p>
-          </div>
-
           <div class="person dani">
             <div class="person-name">Dani</div>
             <p>
-              Normale Push-ups. Optional 25 Minuten.
+              Erhöhte Push-ups. Sobald die Wiederholungen unsauber werden,
+              Auflage erhöhen. 20 Minuten reichen.
+            </p>
+          </div>
+
+          <div class="person max">
+            <div class="person-name">Max</div>
+            <p>
+              Normale Push-ups. Optional auf 25 Minuten verlängern
+              oder eine schwierigere Push-up-Variante nutzen.
             </p>
           </div>
 
@@ -1002,16 +995,16 @@ footer{
 
         <div class="scaling">
 
-          <div class="person max">
-            <div class="person-name">Max</div>
+          <div class="person dani">
+            <div class="person-name">Dani</div>
             <p>
               Erhöhte Push-ups und Squat Thrusts.
               Nach 20 Minuten ist Schluss.
             </p>
           </div>
 
-          <div class="person dani">
-            <div class="person-name">Dani</div>
+          <div class="person max">
+            <div class="person-name">Max</div>
             <p>
               Normale Push-ups und vollständige Burpees.
               Optional auf 25–30 Minuten verlängern.
@@ -1066,7 +1059,7 @@ footer{
       </div>
 
       <div class="warning">
-        <strong>Push-up-Regel für Max</strong>
+        <strong>Push-up-Regel für Dani</strong>
         <p>
           Die zehn Wiederholungen sind der Richtwert.
           Belastung über die Höhe der Auflage skalieren.
@@ -1074,6 +1067,7 @@ footer{
           Bodenwiederholungen plus sieben schlechte.
         </p>
       </div>
+
     </div>
   </section>
 

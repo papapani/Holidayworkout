@@ -1,1 +1,1104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f3f3ef">
 
+<title>Holiday Workout – Mäxi wäxi & Jacky Danny</title>
+
+<style>
+:root{
+  --bg:#f3f3ef;
+  --surface:#ffffff;
+  --surface-soft:#f8f8f4;
+  --text:#182019;
+  --muted:#747c75;
+  --line:#dfe2dc;
+  --accent:#315c42;
+  --accent-soft:#e8efe9;
+  --warm:#8b6747;
+  --warm-soft:#f1e9e1;
+  --shadow:0 10px 28px rgba(24,32,25,.06);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+button{
+  font:inherit;
+}
+
+.container{
+  width:min(760px, calc(100% - 30px));
+  margin:0 auto;
+  padding:42px 0 70px;
+}
+
+
+/* ---------------- HERO ---------------- */
+
+.hero{
+  padding:12px 2px 38px;
+}
+
+.kicker{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:17px;
+}
+
+h1{
+  margin:0;
+  max-width:690px;
+  font-size:clamp(38px, 8vw, 64px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  font-weight:740;
+}
+
+.hero p{
+  margin:22px 0 0;
+  max-width:580px;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.6;
+}
+
+
+/* ---------------- GENERAL ---------------- */
+
+.section{
+  margin-top:18px;
+}
+
+.section-label{
+  margin:0 0 12px 3px;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+
+h2{
+  margin:0;
+  font-size:26px;
+  line-height:1.1;
+  letter-spacing:-.025em;
+}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:20px;
+  box-shadow:var(--shadow);
+}
+
+.small{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+}
+
+
+/* ---------------- WARMUP ---------------- */
+
+.warmup-card{
+  padding:24px;
+}
+
+.warmup-header{
+  margin-bottom:18px;
+}
+
+.warmup-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.warmup-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  background:var(--surface-soft);
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:13px 14px;
+}
+
+.warmup-item strong{
+  font-size:14px;
+  font-weight:650;
+}
+
+.warmup-item span{
+  font-size:13px;
+  color:var(--muted);
+  text-align:right;
+}
+
+
+/* ---------------- TABS ---------------- */
+
+.workout-section{
+  margin-top:28px;
+}
+
+.tabs-wrap{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(243,243,239,.94);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  padding:12px 0;
+}
+
+.tabs{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:6px;
+  background:#e8e9e5;
+  border:1px solid var(--line);
+  padding:5px;
+  border-radius:14px;
+}
+
+.tab{
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  padding:10px 4px;
+  border-radius:9px;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:700;
+  transition:.15s ease;
+}
+
+.tab.active{
+  background:var(--text);
+  color:#fff;
+}
+
+
+/* ---------------- DAY CARD ---------------- */
+
+.day{
+  display:none;
+}
+
+.day.active{
+  display:block;
+}
+
+.day-card{
+  margin-top:10px;
+  padding:26px;
+}
+
+.day-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+}
+
+.day-meta{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:7px;
+}
+
+.day-title{
+  font-size:32px;
+  letter-spacing:-.035em;
+  margin:0;
+}
+
+.description{
+  max-width:520px;
+  margin-top:8px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.5;
+}
+
+.format{
+  flex:0 0 auto;
+  min-width:110px;
+  padding:12px 14px;
+  border:1px solid var(--line);
+  border-radius:13px;
+  background:var(--surface-soft);
+  text-align:right;
+}
+
+.format strong{
+  display:block;
+  color:var(--accent);
+  font-size:14px;
+  letter-spacing:.03em;
+}
+
+.format span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+
+/* ---------------- WORKOUT TABLE ---------------- */
+
+.workout{
+  margin-top:25px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:15px;
+}
+
+.exercise{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:20px;
+  padding:16px 17px;
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}
+
+.exercise:nth-child(even){
+  background:#fbfbf8;
+}
+
+.exercise:last-child{
+  border-bottom:0;
+}
+
+.exercise-name{
+  font-size:15px;
+  font-weight:560;
+}
+
+.exercise-reps{
+  font-size:15px;
+  font-weight:750;
+  text-align:right;
+}
+
+
+/* ---------------- PERSON CARDS ---------------- */
+
+.scaling{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:18px;
+}
+
+.person{
+  padding:17px;
+  border-radius:15px;
+  border:1px solid var(--line);
+  background:var(--surface-soft);
+}
+
+.person.max{
+  border-top:3px solid var(--accent);
+}
+
+.person.dani{
+  border-top:3px solid var(--warm);
+}
+
+.person-name{
+  font-size:13px;
+  font-weight:750;
+  margin-bottom:7px;
+}
+
+.person.max .person-name{
+  color:var(--accent);
+}
+
+.person.dani .person-name{
+  color:var(--warm);
+}
+
+.person p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.55;
+}
+
+
+/* ---------------- COACHING ---------------- */
+
+.coach-note{
+  margin-top:18px;
+  padding:17px 18px;
+  background:var(--accent-soft);
+  border:1px solid #d5e2d8;
+  border-radius:14px;
+  font-size:14px;
+  line-height:1.55;
+}
+
+.coach-note strong{
+  color:var(--accent);
+}
+
+
+/* ---------------- LEGEND ---------------- */
+
+.info-card{
+  padding:24px;
+}
+
+.legend{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:18px;
+}
+
+.legend-item{
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--surface-soft);
+}
+
+.legend-item strong{
+  display:block;
+  margin-bottom:7px;
+  color:var(--accent);
+  font-size:13px;
+}
+
+.legend-item span{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+}
+
+
+/* ---------------- WARNING ---------------- */
+
+.warning{
+  margin-top:16px;
+  padding:17px 18px;
+  border-radius:14px;
+  background:var(--warm-soft);
+  border:1px solid #e4d5c5;
+}
+
+.warning strong{
+  display:block;
+  margin-bottom:5px;
+  color:var(--warm);
+  font-size:14px;
+}
+
+.warning p{
+  margin:0;
+  color:#6d645c;
+  font-size:14px;
+  line-height:1.55;
+}
+
+
+/* ---------------- FOOTER ---------------- */
+
+footer{
+  padding:30px 2px 0;
+  color:var(--muted);
+  font-size:12px;
+}
+
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:620px){
+
+  .container{
+    width:min(100% - 24px,760px);
+    padding-top:30px;
+  }
+
+  .hero{
+    padding-bottom:30px;
+  }
+
+  .warmup-card,
+  .day-card,
+  .info-card{
+    padding:19px;
+    border-radius:17px;
+  }
+
+  .warmup-grid{
+    grid-template-columns:1fr;
+  }
+
+  .tabs-wrap{
+    margin:0 -12px;
+    padding:10px 12px;
+  }
+
+  .day-top{
+    display:block;
+  }
+
+  .format{
+    display:inline-block;
+    margin-top:15px;
+    text-align:left;
+  }
+
+  .scaling{
+    grid-template-columns:1fr;
+  }
+
+  .legend{
+    grid-template-columns:1fr;
+  }
+
+  .exercise{
+    grid-template-columns:1fr 92px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <header class="hero">
+    <div class="kicker">Wilder Kaiser · Holiday Edition</div>
+
+    <h1>
+      Holiday Workout für Mäxi wäxi & Jacky Danny
+    </h1>
+
+    <p>
+      Sechs Tage Bodyweight. Rund 20 Minuten für Max.
+      Dani kann bei Bedarf Volumen oder Dauer erhöhen.
+      Kurz genug für Familienurlaub, strukturiert genug für echten Trainingsreiz.
+    </p>
+  </header>
+
+
+  <!-- WARMUP -->
+
+  <section class="section">
+    <div class="section-label">Vor jedem Workout</div>
+
+    <div class="card warmup-card">
+
+      <div class="warmup-header">
+        <h2>3–4 Minuten Warm-up</h2>
+      </div>
+
+      <div class="warmup-grid">
+
+        <div class="warmup-item">
+          <strong>Hampelmänner</strong>
+          <span>40 Sek.</span>
+        </div>
+
+        <div class="warmup-item">
+          <strong>Air Squats</strong>
+          <span>10</span>
+        </div>
+
+        <div class="warmup-item">
+          <strong>Reverse Lunges</strong>
+          <span>5 / Bein</span>
+        </div>
+
+        <div class="warmup-item">
+          <strong>Armkreisen</strong>
+          <span>30 Sek.</span>
+        </div>
+
+        <div class="warmup-item">
+          <strong>Leichte Push-ups</strong>
+          <span>5</span>
+        </div>
+
+        <div class="warmup-item">
+          <strong>High Knees</strong>
+          <span>30 Sek.</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WORKOUTS -->
+
+  <section class="workout-section">
+
+    <div class="section-label">Trainingswoche</div>
+
+    <div class="tabs-wrap">
+      <div class="tabs">
+        <button class="tab active" onclick="showDay(0)">MO</button>
+        <button class="tab" onclick="showDay(1)">DI</button>
+        <button class="tab" onclick="showDay(2)">MI</button>
+        <button class="tab" onclick="showDay(3)">DO</button>
+        <button class="tab" onclick="showDay(4)">FR</button>
+        <button class="tab" onclick="showDay(5)">SA</button>
+      </div>
+    </div>
+
+
+    <!-- MONDAY -->
+
+    <div class="day active">
+      <div class="card day-card">
+
+        <div class="day-top">
+          <div>
+            <div class="day-meta">Montag · Tag 1</div>
+            <h2 class="day-title">Kaiser Start</h2>
+            <div class="description">
+              Ruhiger Einstieg. Gleichmäßiges Tempo und saubere Wiederholungen.
+            </div>
+          </div>
+
+          <div class="format">
+            <strong>AMRAP</strong>
+            <span>15–20 Minuten</span>
+          </div>
+        </div>
+
+        <div class="workout">
+
+          <div class="exercise">
+            <span class="exercise-name">Push-ups</span>
+            <span class="exercise-reps">10</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Air Squats</span>
+            <span class="exercise-reps">15</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Reverse Lunges</span>
+            <span class="exercise-reps">10 gesamt</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Mountain Climbers</span>
+            <span class="exercise-reps">20 gesamt</span>
+          </div>
+
+        </div>
+
+        <div class="scaling">
+
+          <div class="person max">
+            <div class="person-name">Max</div>
+            <p>
+              Push-ups erhöht an Bank, Tischkante oder stabiler Mauer.
+              Höhe so wählen, dass 10 saubere Wiederholungen möglich sind.
+            </p>
+          </div>
+
+          <div class="person dani">
+            <div class="person-name">Dani</div>
+            <p>
+              Normale Push-ups. Bei Bedarf auf 20–25 Minuten verlängern.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="coach-note">
+          <strong>Coaching:</strong>
+          Die erste Runde soll sich fast zu leicht anfühlen.
+          Das Tempo später steigern, nicht am Anfang verbrennen.
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- TUESDAY -->
+
+    <div class="day">
+      <div class="card day-card">
+
+        <div class="day-top">
+          <div>
+            <div class="day-meta">Dienstag · Tag 2</div>
+            <h2 class="day-title">Clockwork</h2>
+            <div class="description">
+              Klare Intervalle. Mehr Dichte, trotzdem kontrollierbare Belastung.
+            </div>
+          </div>
+
+          <div class="format">
+            <strong>EMOM</strong>
+            <span>20 Minuten</span>
+          </div>
+        </div>
+
+        <div class="workout">
+
+          <div class="exercise">
+            <span class="exercise-name">Minute 1 · Air Squats</span>
+            <span class="exercise-reps">15</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Minute 2 · Push-ups</span>
+            <span class="exercise-reps">10</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Minute 3 · Reverse Lunges</span>
+            <span class="exercise-reps">12 gesamt</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Minute 4 · Mountain Climbers</span>
+            <span class="exercise-reps">30 Sek.</span>
+          </div>
+
+        </div>
+
+        <div class="scaling">
+
+          <div class="person max">
+            <div class="person-name">Max</div>
+            <p>
+              Push-up-Höhe so wählen, dass die 10 Wiederholungen spätestens
+              nach etwa 30–40 Sekunden erledigt sind.
+            </p>
+          </div>
+
+          <div class="person dani">
+            <div class="person-name">Dani</div>
+            <p>
+              20 Air Squats, normale Push-ups und bei Bedarf 16 Lunges.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="coach-note">
+          <strong>Prinzip:</strong>
+          Der Vier-Minuten-Block läuft fünfmal.
+          Was von jeder Minute übrig bleibt, ist Pause.
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- WEDNESDAY -->
+
+    <div class="day">
+      <div class="card day-card">
+
+        <div class="day-top">
+          <div>
+            <div class="day-meta">Mittwoch · Tag 3</div>
+            <h2 class="day-title">Alpine For Time</h2>
+            <div class="description">
+              Der erste deutlich konditionellere Tag.
+            </div>
+          </div>
+
+          <div class="format">
+            <strong>FOR TIME</strong>
+            <span>5 Runden</span>
+          </div>
+        </div>
+
+        <div class="workout">
+
+          <div class="exercise">
+            <span class="exercise-name">Air Squats</span>
+            <span class="exercise-reps">15</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Push-ups</span>
+            <span class="exercise-reps">10</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Reverse Lunges</span>
+            <span class="exercise-reps">12 gesamt</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Squat Thrusts</span>
+            <span class="exercise-reps">6</span>
+          </div>
+
+        </div>
+
+        <div class="scaling">
+
+          <div class="person max">
+            <div class="person-name">Max</div>
+            <p>
+              Erhöhte Push-ups und Squat Thrusts ohne Liegestütz.
+              Zeitlimit: 20 Minuten.
+            </p>
+          </div>
+
+          <div class="person dani">
+            <div class="person-name">Dani</div>
+            <p>
+              Normale Push-ups und vollständige Burpees.
+              Ebenfalls fünf Runden.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="coach-note">
+          <strong>Coaching:</strong>
+          Nicht Runde eins gewinnen und danach einbrechen.
+          Konstantes Tempo.
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- THURSDAY -->
+
+    <div class="day">
+      <div class="card day-card">
+
+        <div class="day-top">
+          <div>
+            <div class="day-meta">Donnerstag · Tag 4</div>
+            <h2 class="day-title">Mountain Reset</h2>
+            <div class="description">
+              Bewusst weniger Eskalation. Spannung und Bewegung bleiben erhalten.
+            </div>
+          </div>
+
+          <div class="format">
+            <strong>AMRAP</strong>
+            <span>16 Minuten</span>
+          </div>
+        </div>
+
+        <div class="workout">
+
+          <div class="exercise">
+            <span class="exercise-name">Tempo Air Squats · 3 Sek. abwärts</span>
+            <span class="exercise-reps">10</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Push-ups</span>
+            <span class="exercise-reps">10</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Glute Bridge</span>
+            <span class="exercise-reps">15</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Dead Bug</span>
+            <span class="exercise-reps">8 / Seite</span>
+          </div>
+
+        </div>
+
+        <div class="scaling">
+
+          <div class="person max">
+            <div class="person-name">Max</div>
+            <p>
+              Ruhiges Tempo. Push-ups früh genug skalieren.
+            </p>
+          </div>
+
+          <div class="person dani">
+            <div class="person-name">Dani</div>
+            <p>
+              Push-ups schwerer skalieren oder auf 20 Minuten verlängern.
+              Trotzdem kein Vollgas.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="coach-note">
+          <strong>Warum:</strong>
+          Sechs harte Tage linear hochzuziehen wäre ineffizient.
+          Heute schaffen wir Platz für Freitag und Samstag.
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- FRIDAY -->
+
+    <div class="day">
+      <div class="card day-card">
+
+        <div class="day-top">
+          <div>
+            <div class="day-meta">Freitag · Tag 5</div>
+            <h2 class="day-title">Kaiser Cindy-ish</h2>
+            <div class="description">
+              Einfach, repetitiv und ab der zweiten Hälfte unangenehm.
+            </div>
+          </div>
+
+          <div class="format">
+            <strong>AMRAP</strong>
+            <span>20 Minuten</span>
+          </div>
+        </div>
+
+        <div class="workout">
+
+          <div class="exercise">
+            <span class="exercise-name">Push-ups</span>
+            <span class="exercise-reps">10</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Air Squats</span>
+            <span class="exercise-reps">15</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Reverse Lunges</span>
+            <span class="exercise-reps">10 gesamt</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Mountain Climbers</span>
+            <span class="exercise-reps">20 gesamt</span>
+          </div>
+
+        </div>
+
+        <div class="scaling">
+
+          <div class="person max">
+            <div class="person-name">Max</div>
+            <p>
+              Erhöhte Push-ups. Sobald die Wiederholungen unsauber werden,
+              Auflage erhöhen.
+            </p>
+          </div>
+
+          <div class="person dani">
+            <div class="person-name">Dani</div>
+            <p>
+              Normale Push-ups. Optional 25 Minuten.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="coach-note">
+          <strong>Coaching:</strong>
+          Heute darf die Dichte hoch.
+          Trotzdem keine einzelnen Grind-Wiederholungen erzwingen.
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- SATURDAY -->
+
+    <div class="day">
+      <div class="card day-card">
+
+        <div class="day-top">
+          <div>
+            <div class="day-meta">Samstag · Finale</div>
+            <h2 class="day-title">Wilder Kaiser Finish</h2>
+            <div class="description">
+              Höchste Gesamtdichte der Woche.
+            </div>
+          </div>
+
+          <div class="format">
+            <strong>AMRAP</strong>
+            <span>20 Minuten</span>
+          </div>
+        </div>
+
+        <div class="workout">
+
+          <div class="exercise">
+            <span class="exercise-name">Air Squats</span>
+            <span class="exercise-reps">15</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Push-ups</span>
+            <span class="exercise-reps">10</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Reverse Lunges</span>
+            <span class="exercise-reps">10 / Bein</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Squat Thrusts / Burpees</span>
+            <span class="exercise-reps">8</span>
+          </div>
+
+          <div class="exercise">
+            <span class="exercise-name">Mountain Climbers</span>
+            <span class="exercise-reps">20 gesamt</span>
+          </div>
+
+        </div>
+
+        <div class="scaling">
+
+          <div class="person max">
+            <div class="person-name">Max</div>
+            <p>
+              Erhöhte Push-ups und Squat Thrusts.
+              Nach 20 Minuten ist Schluss.
+            </p>
+          </div>
+
+          <div class="person dani">
+            <div class="person-name">Dani</div>
+            <p>
+              Normale Push-ups und vollständige Burpees.
+              Optional auf 25–30 Minuten verlängern.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="coach-note">
+          <strong>Benchmark:</strong>
+          Runden plus zusätzliche Wiederholungen notieren.
+          Keine Technik für eine halbe Extra-Runde opfern.
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- FORMATS -->
+
+  <section class="section">
+    <div class="section-label">Kurz erklärt</div>
+
+    <div class="card info-card">
+      <h2>Workout-Formate</h2>
+
+      <div class="legend">
+
+        <div class="legend-item">
+          <strong>AMRAP</strong>
+          <span>
+            So viele saubere Runden wie möglich innerhalb der vorgegebenen Zeit.
+          </span>
+        </div>
+
+        <div class="legend-item">
+          <strong>EMOM</strong>
+          <span>
+            Zu Beginn jeder Minute starten. Der Rest der Minute ist Pause.
+          </span>
+        </div>
+
+        <div class="legend-item">
+          <strong>FOR TIME</strong>
+          <span>
+            Die vorgegebene Arbeit möglichst zügig erledigen, ohne die Technik zu opfern.
+          </span>
+        </div>
+
+      </div>
+
+      <div class="warning">
+        <strong>Push-up-Regel für Max</strong>
+        <p>
+          Die zehn Wiederholungen sind der Richtwert.
+          Belastung über die Höhe der Auflage skalieren.
+          Zehn saubere erhöhte Push-ups sind sinnvoller als drei gute
+          Bodenwiederholungen plus sieben schlechte.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    Wilder Kaiser · Holiday Workout · 2026
+  </footer>
+
+</div>
+
+
+<script>
+function showDay(index){
+  const tabs = document.querySelectorAll(".tab");
+  const days = document.querySelectorAll(".day");
+
+  tabs.forEach((tab, i) => {
+    tab.classList.toggle("active", i === index);
+  });
+
+  days.forEach((day, i) => {
+    day.classList.toggle("active", i === index);
+  });
+}
+</script>
+
+</body>
+</html>
